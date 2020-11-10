@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/coPlayers/idevos/issues"
   },
-  "homepage": "https://github.com/coPlayers/idevos#readme"
+  "homepage": "https://github.com/coPlayers/idevos#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "mongoose": "^5.10.13"
+  }
 }

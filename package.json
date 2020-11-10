@@ -1,0 +1,23 @@
+{
+  "name": "idevos",
+  "version": "0.0.1",
+  "description": "Devs web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coPlayers/idevos.git"
+  },
+  "keywords": [
+    "dev",
+    "server"
+  ],
+  "author": "stefian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coPlayers/idevos/issues"
+  },
+  "homepage": "https://github.com/coPlayers/idevos#readme"
+}

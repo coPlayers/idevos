@@ -1,5 +1,5 @@
 const express = require('express');
-
+const routes = require('./routes/routes');
 const app = express();
 
 // Watch for incoming requests of method GET //

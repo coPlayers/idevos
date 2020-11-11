@@ -5,9 +5,9 @@ const app = require('../app');
 describe('The express app', () => {
   it('handles a GET request to /api', (done) => {
     request(app)
-      .get('/api')        // customized statements //
+      .get('/api')        // customized statements / get/put/post .. + route  //
       .end((err, response) => {
-
+        console.log(response);
       });
   });
 });

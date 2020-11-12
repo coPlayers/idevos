@@ -4,6 +4,6 @@ const routes = require('./routes/routes');
 const app = express();
 
 app.use(bodyParser.json());
-routes(app);
+routes(app);  // after app.use(bodyParser) //
 
 module.exports = app;

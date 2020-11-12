@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 before(done => {
-  mongoose.connect('mongodb://localhost/idevos_test');
+  mongoose.connect('mongodb://localhost/idevos_test',
+    { useNewUrlParser: true }
+  );
   mongoose.connection
     .once('open', () => done())
     .on('error', err => {

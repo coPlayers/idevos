@@ -8,3 +8,11 @@ before(done => {
       console.warn('Warning', error);
     });
 });
+
+// drop collections before each test //
+beforeEach(done => {
+  const { devs } = mongoose.connection.collections;
+  devs.drop()
+    .then(() => done())
+    .catch(() => done()); // to allow test to continue after first connection w/o collections //
+});

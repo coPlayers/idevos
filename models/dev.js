@@ -11,3 +11,7 @@ const DevSchema = new Schema({
     default: false
   },
 });
+
+const Dev = mongoose.model('dev', DevSchema);
+
+module.exports = Dev;

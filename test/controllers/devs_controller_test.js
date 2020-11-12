@@ -12,19 +12,15 @@ describe('Drivers controller', () => {
   it('Post to /api/devs creates a new dev', (done) => {
     // Check Devs count is incremented on Creation //
     Dev.count().then(count => {
-
       request(app)
         .post('/api/devs')
         .send({ email: 'test@test.com' })
         .end(() => {
-
           Dev.count().then(newCount => {
             assert(count + 1 === newCount);
             done();
           });
-
         });
-
     });
     
   });

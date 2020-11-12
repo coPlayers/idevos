@@ -1,4 +1,4 @@
-const Dev = require('../model/dev');
+const Dev = require('../models/dev');
 
 module.exports = {
   greeting(req, res) {

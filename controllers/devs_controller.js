@@ -6,7 +6,9 @@ module.exports = {
   },
 
   create(req, res) {
-    console.log(req.body);
-    res.send({ hi: 'there' });
+    const devProps = req.body;
+    
+    Dev.create(devProps)
+      .then(dev => res.send(dev));
   },
 };

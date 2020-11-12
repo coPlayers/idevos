@@ -4,6 +4,7 @@ const request = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../../app');
 
+// To avoid getting Mocha declaring twice the Dev model //
 const Dev = mongoose.model('dev');
 
 describe('Drivers controller', () => {

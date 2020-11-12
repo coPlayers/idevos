@@ -1,3 +1,5 @@
+const Dev = require('../model/dev');
+
 module.exports = {
   greeting(req, res) {
     res.send({ hi: 'there' });

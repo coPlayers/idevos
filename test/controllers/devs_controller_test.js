@@ -1,7 +1,10 @@
 const { doesNotMatch } = require('assert');
 const assert = require('assert');
 const request = require('supertest');
+const mongoose = require('mongoose');
 const app = require('../../app');
+
+const Dev = mongoose.model('dev');
 
 describe('Drivers controller', () => {
   //  Method - Route - Result = REST API it text convention //

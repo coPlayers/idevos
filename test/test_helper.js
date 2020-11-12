@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 before(done => {
   mongoose.connect('mongodb://localhost/idevos_test',
-    { useNewUrlParser: true }
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
   );
   mongoose.connection
     .once('open', () => done())

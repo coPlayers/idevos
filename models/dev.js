@@ -15,6 +15,7 @@ const DevSchema = new Schema({
     type: Boolean,
     default: false
   },
+  geometry: PointSchema
 });
 
 const Dev = mongoose.model('dev', DevSchema);

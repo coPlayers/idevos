@@ -71,15 +71,16 @@ describe('Drivers controller', () => {
     });
 
     // Use Promise.all() to save the 2 devs in parallel //
-    Promise.all([ seattleDev.save(), miamiDev.save()])
+    Promise.all([seattleDev.save(), miamiDev.save()])
       .then(() => {
         request(app)
           .get('/api/devs?lng=-80&lat=25')
           .end((err, response) => {
-            console.log(response);
+            assert(response.body.length === 1);
+            assert(response.body[0].obj.email === 'miami@test.com');
             done();
-          })
-      })
+          });
+      });
   });
 
 });

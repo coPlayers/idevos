@@ -8,4 +8,6 @@ module.exports = (app) => {
   app.post('/api/devs', DevsController.create);
 
   app.put('/api/devs/:id', DevsController.edit);
+
+  app.delete('/api/devs/:id', DevsController.delete);
 };

@@ -5,6 +5,29 @@ module.exports = {
     res.send({ hi: 'there' });
   },
 
+  index(req, res, next) {
+    // eg: http://google.com?lng=80&lat=20 //
+    const { lng, lat } = req.query;  
+
+    Dev.aggregate([
+      {
+        $geoNear: {
+          near: {
+            type: "Point",
+            coordinates: [parseFloat(lng), parseFloat(lat)]  // expect lng and lat to come from the req //
+          },
+          maxDistance: 200000,    // units = meters //
+          spherical: true,
+          distanceField: "dist.calculated"
+        }
+      }
+    ])
+    .then(devs => res.send(devs))
+    .catch(next);
+  },
+
+  },
+
   create(req, res, next) {
     const devProps = req.body;
     

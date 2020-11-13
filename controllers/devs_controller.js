@@ -15,5 +15,7 @@ module.exports = {
 
   edit(req, res, next) {
     const devId = req.params.id;
+    const devProps = req.body;
+
   }
 };

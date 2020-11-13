@@ -43,9 +43,21 @@ describe('Drivers controller', () => {
   });
 
   it('DELETE to /api/devs/id can delete a dev', done => {
+    // Create Dev, save, delete, check Dev is not in the DB //
+    const dev = new Dev({ email: 'test@test.com' });
 
+    dev.save().then(() => {
+      request(app)
+        .delete(`/api/devs/${dev._id}`)
+        .end(() => {
+          Dev.findOne({ email: 'test@test.com' })
+            .then((dev) => {
+              assert(dev === null);
+              done();
+            });
+        });
+    });
 
-    done();
   });
 
 });

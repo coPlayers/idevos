@@ -35,10 +35,10 @@ describe('Drivers controller', () => {
         .end(() => {
           Dev.findOne({ email: 't@t.com' })
             .then(dev => {
-              assert(dev.coding === true);
+              assert(dev.coding);
               done();
-            })
-        })
-    })
+            });
+        });
+    });
   });
 });

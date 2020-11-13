@@ -17,5 +17,9 @@ module.exports = {
     const devId = req.params.id;
     const devProps = req.body;
 
+    Dev.findByIdAndUpdate({ _id: devId, devProps })
+      .then(() => Dev.findById({ _id: devId }))
+      .then(dev => res.send(dev))
+      .catch(next);
   }
 };

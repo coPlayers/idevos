@@ -35,7 +35,7 @@ describe('Drivers controller', () => {
         .end(() => {
           Dev.findOne({ email: 't@t.com' })
             .then(dev => {
-              assert(dev.coding);
+              assert(dev.coding === true);
               done();
             });
         });

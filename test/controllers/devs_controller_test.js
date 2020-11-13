@@ -41,5 +41,11 @@ describe('Drivers controller', () => {
         });
     });
   });
-  
+
+  it('DELETE to /api/devs/id can delete a dev', done => {
+
+
+    done();
+  });
+
 });

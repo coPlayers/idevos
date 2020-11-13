@@ -9,7 +9,8 @@ if (process.env.NODE_ENV !== 'test') {
   mongoose.connect('mongodb://localhost/idevos',
     {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useFindAndModify: false
     }
   );
 }  // else if testing - don't connect to db(dev) //

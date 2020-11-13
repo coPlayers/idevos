@@ -13,4 +13,9 @@ if (process.env.NODE_ENV !== 'test') {
 app.use(bodyParser.json());
 routes(app);  // after app.use(bodyParser) //
 
+// Middleware / Error handler //
+app.use(() => {
+
+});
+
 module.exports = app;

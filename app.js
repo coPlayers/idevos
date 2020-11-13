@@ -20,7 +20,7 @@ routes(app);  // after app.use(bodyParser) //
 
 // Middleware / Error handler //
 app.use((err, req, res, next) => {
-  console.log(err);
+  res.send({ error: err.message });
 });
 
 module.exports = app;

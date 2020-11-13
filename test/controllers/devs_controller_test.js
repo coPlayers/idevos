@@ -60,9 +60,26 @@ describe('Drivers controller', () => {
   });
 
   it('GET to /api/devs finds devs in a location', done => {
+    // Create 2 devs with diff lng, lat and query to see which we get back //
+    const seattleDev = new Dev({
+      email: 'seattle@test.com',
+      geometry: { type: 'Point', coordinates: [-122.4759902, 47.6147628] }
+    });
+    const miamiDev = new Dev({
+      email: 'miami@test.com',
+      geometry: { type: 'Point', coordinates: [-80.253, 25.791] }
+    });
 
-
-    done();
+    // Use Promise.all() to save the 2 devs in parallel //
+    Promise.all([ seattleDev.save(), miamiDev.save()])
+      .then(() => {
+        request(app)
+          .get('/api/devs?lng=-80&lat=25')
+          .end((err, response) => {
+            console.log(response);
+            done();
+          })
+      })
   });
 
 });

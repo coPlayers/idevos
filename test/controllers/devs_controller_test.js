@@ -76,7 +76,7 @@ describe('Drivers controller', () => {
         request(app)
           .get('/api/devs?lng=-80&lat=25')
           .end((err, response) => {
-            assert(response.body.length === 1);
+            assert(response.body.length === 2);
             assert(response.body[0].email === 'miami@test.com');
             done();
           });

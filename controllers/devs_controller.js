@@ -5,10 +5,11 @@ module.exports = {
     res.send({ hi: 'there' });
   },
 
-  create(req, res) {
+  create(req, res, next) {
     const devProps = req.body;
     
     Dev.create(devProps)
-      .then(dev => res.send(dev));
+      .then(dev => res.send(dev))
+      .catch(next);
   },
 };

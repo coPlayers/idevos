@@ -24,7 +24,21 @@ describe('Drivers controller', () => {
     });
   });
 
-  it('PUT to /api/devs/:id edits an existing dev', () => {
+  it('PUT to /api/devs/:id edits an existing dev', (done) => {
+    // Create a dev, save it, make a PUT request, then check is updated //
+    const dev = new Dev({ email: 't@t.com', coding: false });
 
+    dev.save().then(() => {
+      request(app)
+        .put(`/api/devs/${dev._id}`)
+        .send({ coding: true })
+        .end(() => {
+          Dev.findOne({ email: 't@t.com' })
+            .then(dev => {
+              assert(dev.coding === true);
+              done();
+            })
+        })
+    })
   });
 });

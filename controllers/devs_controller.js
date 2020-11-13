@@ -21,5 +21,14 @@ module.exports = {
       .then(() => Dev.findById({ _id: devId }))
       .then(dev => res.send(dev))
       .catch(next);
+  },
+
+  delete(req, res, next) {
+    const devId = req.params.id;
+    const devProps = req.body;
+
+    Dev.findByIdAndRemove({ _id: devId })
+      .then(dev => res.status(204).send(dev)) // 204 - Successfully deleted //
+      .catch(next);
   }
 };

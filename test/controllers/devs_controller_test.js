@@ -52,7 +52,7 @@ describe('Drivers controller', () => {
         .end(() => {
           Dev.findOne({ email: 'test@test.com' })
             .then((dev) => {
-              assert(dev === null);
+              assert(dev === {});
               done();
             });
         });

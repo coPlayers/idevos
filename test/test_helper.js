@@ -19,6 +19,7 @@ before(done => {
 beforeEach(done => {
   const { devs } = mongoose.connection.collections;
   devs.drop()
+    .then(() => devs.ensureIndex({ 'geometry.coordinates': '2dsphere' }))
     .then(() => done())
     .catch(() => done()); // to allow test to continue after first connection w/o collections //
 });

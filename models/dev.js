@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const PointSchema = new Schema({
+
+});
+
 const DevSchema = new Schema({
   email: {
     type: String,

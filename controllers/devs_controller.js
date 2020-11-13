@@ -12,4 +12,8 @@ module.exports = {
       .then(dev => res.send(dev))
       .catch(next);
   },
+
+  edit(req, res, next) {
+    
+  }
 };

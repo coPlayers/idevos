@@ -26,8 +26,6 @@ module.exports = {
     .catch(next);
   },
 
-  },
-
   create(req, res, next) {
     const devProps = req.body;
     

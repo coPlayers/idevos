@@ -24,7 +24,7 @@ describe('Drivers controller', () => {
     });
   });
 
-  it('PUT to /api/devs/:id edits an existing dev', done => {
+  it('PUT to /api/devs/:id edits an existing dev', () => {
 
   });
 });

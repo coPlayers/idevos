@@ -24,7 +24,7 @@ describe('Drivers controller', () => {
     });
   });
 
-  it('PUT to /api/devs/:id edits an existing dev', (done) => {
+  it('PUT to /api/devs/:id edits an existing dev', done => {
     // Create a dev, save it, make a PUT request, then check is updated //
     const dev = new Dev({ email: 't@t.com', coding: false });
 

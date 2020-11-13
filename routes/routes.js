@@ -6,4 +6,6 @@ module.exports = (app) => {
   app.get('/api', DevsController.greeting);
 
   app.post('/api/devs', DevsController.create);
+
+  app.put('/api/devs/:id', DevsController.edit);
 };

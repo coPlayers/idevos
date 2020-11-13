@@ -9,7 +9,7 @@ const Dev = mongoose.model('dev');
 
 describe('Drivers controller', () => {
   //  Method - Route - Result = REST API it text convention //
-  it('Post to /api/devs creates a new dev', (done) => {
+  it('POST to /api/devs creates a new dev', (done) => {
     // Check Devs count is incremented on Creation //
     Dev.countDocuments().then(count => {
       request(app)
@@ -22,6 +22,9 @@ describe('Drivers controller', () => {
           });
         });
     });
-    
+  });
+
+  it('PUT to /api/devs/:id edits an existing dev', done => {
+
   });
 });
